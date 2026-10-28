@@ -1,0 +1,62 @@
+name: Promouvoir une version
+
+# Promouvoir = faire de la version annoncee sur beta la version stable. Le
+# manifeste beta.json et sa signature sont copies tels quels vers stable : la
+# signature reste valable, aucune cle n'est necessaire. Les Pi du canal stable
+# l'installent a leur prochain passage.
+#
+# Ce workflow vit dans le depot public : la publication sur beta, elle, part du
+# workflow « Release » du depot prive.
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version à promouvoir de beta vers stable (par exemple 1.3.0)'
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+concurrency:
+  group: manifestes
+  cancel-in-progress: false
+
+jobs:
+  promouvoir:
+    name: Promouvoir en stable
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: gh-pages
+
+      - name: Copier beta vers stable
+        env:
+          VERSION: ${{ inputs.version }}
+        run: |
+          if [[ ! "$VERSION" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+            echo "::error::Version « $VERSION » invalide (attendu : X.Y.Z)"
+            exit 1
+          fi
+
+          ANNONCEE="$(jq -r .version beta.json)"
+          if [[ "$ANNONCEE" != "$VERSION" ]]; then
+            echo "::error::Le canal beta annonce la version $ANNONCEE, pas $VERSION."
+            exit 1
+          fi
+
+          cp beta.json stable.json
+          cp beta.json.sig stable.json.sig
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add stable.json stable.json.sig
+          if git diff --cached --quiet; then
+            echo "La version $VERSION est déjà en stable."
+            exit 0
+          fi
+          git commit -m "stable $VERSION"
+          # Le depot prive peut avoir publie une beta entre-temps.
+          git pull --rebase --quiet origin gh-pages
+          git push origin gh-pages
