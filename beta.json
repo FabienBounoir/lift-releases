@@ -1,12 +1,26 @@
 {
-  "version": "1.3.0",
-  "date": "2026-10-28T21:38:09.597Z",
-  "notes": "fix(supervision): cle de ping posee sur chaque Pi, jamais dans le paquet public\n\nLes paquets sont publies dans lift-releases, public : la cle healthchecks.io\nn'y est plus embarquee (supervision.json retire du workflow et du paquet).\nLe serveur et l'agent la lisent dans HC_PING_KEY, fourni par\n/etc/liftmaster/liftmaster.env. Doc de mise en place dans mises-a-jour.md.\n\nCo-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>\nClaude-Session: https://claude.ai/code/session_01CQMWKTrcMWskmjFKK1hbeP",
+  "version": "1.3.1",
+  "date": "2026-10-28T22:14:50.951Z",
+  "notes": "chore(coquille): version 1.0.1 pour tester la mise a jour des postes\n\nCo-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>\nClaude-Session: https://claude.ai/code/session_01CQMWKTrcMWskmjFKK1hbeP",
   "nodeMin": 20,
   "urgent": false,
   "serveur": {
-    "url": "https://github.com/FabienBounoir/lift-releases/releases/download/v1.3.0/liftmaster-1.3.0.tar.gz",
-    "sha256": "f719e4911010da2cf339203dc00f664609018774469f18f961abd492f167c48d"
+    "url": "https://github.com/FabienBounoir/lift-releases/releases/download/v1.3.1/liftmaster-1.3.1.tar.gz",
+    "sha256": "4be437c7756e621b763fa7fb3052b2affc0ef6961bda32b8b0c6cd022744500f"
   },
-  "coquille": null
+  "coquille": {
+    "version": "1.0.1",
+    "notes": "Coquille LiftMaster 1.0.1",
+    "pub_date": "2026-10-28T22:12:51.182Z",
+    "platforms": {
+      "darwin-aarch64": {
+        "url": "https://github.com/FabienBounoir/lift-releases/releases/download/coquille-v1.0.1/liftmaster-coquille_1.0.1_macos-universal.app.tar.gz",
+        "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVRNnN0RVo2NDdvUitVbWhXNlFkZEptM09SZGYwVFBvM3IxbTBEZGwvcmFnY3lkVjBRK2UwWk9kMHVKODlVUWs3Tk1yU0ZqOHI2SlBYOUM2L3o5ODFrc3I2cG9FODN4UlFBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzMjI1NTI5CWZpbGU6R2VzdGlvbm5haXJlIGRlIHBvbnRzLmFwcC50YXIuZ3oJdmVyc2lvbjoxLjAuMQptV1hvLzc5enZvL3dFamc5ZlhTOGlhYTVWdzdDMEZTWUUrV21lUU1jMTFYSFZhQWwzR2YrV3dzVDAxYkNSV2FjUU0vemd2S3lBVXhYUkloVlJaUlJCdz09Cg=="
+      },
+      "darwin-x86_64": {
+        "url": "https://github.com/FabienBounoir/lift-releases/releases/download/coquille-v1.0.1/liftmaster-coquille_1.0.1_macos-universal.app.tar.gz",
+        "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVRNnN0RVo2NDdvUitVbWhXNlFkZEptM09SZGYwVFBvM3IxbTBEZGwvcmFnY3lkVjBRK2UwWk9kMHVKODlVUWs3Tk1yU0ZqOHI2SlBYOUM2L3o5ODFrc3I2cG9FODN4UlFBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzMjI1NTI5CWZpbGU6R2VzdGlvbm5haXJlIGRlIHBvbnRzLmFwcC50YXIuZ3oJdmVyc2lvbjoxLjAuMQptV1hvLzc5enZvL3dFamc5ZlhTOGlhYTVWdzdDMEZTWUUrV21lUU1jMTFYSFZhQWwzR2YrV3dzVDAxYkNSV2FjUU0vemd2S3lBVXhYUkloVlJaUlJCdz09Cg=="
+      }
+    }
+  }
 }
