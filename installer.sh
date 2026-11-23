@@ -1,12 +1,12 @@
 #!/bin/bash
-# Installe LiftMaster sur un Raspberry Pi depuis un paquet (tar.gz), ou bascule
+# Installe Pontouns sur un Raspberry Pi depuis un paquet (tar.gz), ou bascule
 # un Pi installé à l'ancienne (git pull + deploy.sh) vers les mises à jour
-# automatiques. À lancer avec sudo, depuis le compte qui fait tourner LiftMaster.
+# automatiques. À lancer avec sudo, depuis le compte qui fait tourner Pontouns.
 #
 # Pi neuf, sans rien d'autre que ce script (il est publié sous le nom
 # installer.sh à côté des manifestes) :
-#   curl -fsSL https://fabienbounoir.github.io/lift-releases/installer.sh | sudo bash
-#   curl -fsSL https://fabienbounoir.github.io/lift-releases/installer.sh | sudo bash -s -- --depuis /home/liftmaster/lift
+#   curl -fsSL https://fabienbounoir.github.io/pontouns-releases/installer.sh | sudo bash
+#   curl -fsSL https://fabienbounoir.github.io/pontouns-releases/installer.sh | sudo bash -s -- --depuis /home/liftmaster/lift
 #
 # Depuis un dépôt ou un paquet :
 #   sudo scripts/installer-paquet.sh                      dernière version « stable »
@@ -46,7 +46,7 @@ RACINE="${LIFTMASTER_RACINE:-/opt/liftmaster}"
 DATA_DIR="${DATA_DIR:-/var/lib/liftmaster}"
 DOSSIER_ENV="${LIFTMASTER_ETC:-/etc/liftmaster}"
 DOSSIER_UNITES="${LIFTMASTER_UNITES:-/etc/systemd/system}"
-URL_MANIFESTES="${LIFTMASTER_URL_MANIFESTES:-https://fabienbounoir.github.io/lift-releases}"
+URL_MANIFESTES="${LIFTMASTER_URL_MANIFESTES:-https://fabienbounoir.github.io/pontouns-releases}"
 PORT="${PORT:-3000}"
 
 # Vide quand le script arrive par un tube (curl ... | sudo bash) : il n'a alors
@@ -88,7 +88,7 @@ main() {
 		esac
 	done
 
-	echo "🍓 Installation LiftMaster (paquet) sur Raspberry Pi"
+	echo "🍓 Installation Pontouns (paquet) sur Raspberry Pi"
 	echo "===================================================="
 
 	if [[ "$EUID" -ne 0 && "${LIFTMASTER_SANS_ROOT:-}" != "1" ]]; then
@@ -98,7 +98,7 @@ main() {
 
 	SERVICE_USER="${SERVICE_USER:-${SUDO_USER:-}}"
 	if [[ -z "$SERVICE_USER" || "$SERVICE_USER" == "root" ]]; then
-		echo "❌ Lancez-le avec sudo depuis le compte qui fait tourner LiftMaster (pas en root direct)." >&2
+		echo "❌ Lancez-le avec sudo depuis le compte qui fait tourner Pontouns (pas en root direct)." >&2
 		exit 1
 	fi
 	SERVICE_GROUP="$(id -gn "$SERVICE_USER")"
@@ -202,7 +202,7 @@ main() {
 	tar -xzf "$PAQUET" -C "$STAGING" --strip-components=1 --no-same-owner
 	paquet_invalide() {
 		rm -rf "$STAGING"
-		echo "❌ Ce n'est pas un paquet LiftMaster valide." >&2
+		echo "❌ Ce n'est pas un paquet Pontouns valide." >&2
 		exit 1
 	}
 	[[ -f "$STAGING/package.json" && -f "$STAGING/server.js" && -f "$STAGING/agent/agent.js" ]] || paquet_invalide
@@ -243,7 +243,7 @@ main() {
 	# --- Bascule depuis une installation à l'ancienne ---------------------------
 	if [[ -n "$ANCIEN" ]]; then
 		if [[ ! -d "$ANCIEN/data" ]]; then
-			echo "❌ $ANCIEN/data introuvable : ce n'est pas l'ancien dépôt LiftMaster." >&2
+			echo "❌ $ANCIEN/data introuvable : ce n'est pas l'ancien dépôt Pontouns." >&2
 			exit 1
 		fi
 		mkdir -p "$DATA_DIR"
@@ -276,7 +276,7 @@ main() {
 	mkdir -p "$DATA_DIR"
 	chown -R "$SERVICE_USER:$SERVICE_GROUP" "$DATA_DIR"
 	# Lu par systemd (root) : les clés qu'il contient n'ont pas à être lisibles de tous.
-	[[ -f "$DOSSIER_ENV/liftmaster.env" ]] || printf '# Reglages locaux de LiftMaster (cle meteo...), un NOM=valeur par ligne.\n' >"$DOSSIER_ENV/liftmaster.env"
+	[[ -f "$DOSSIER_ENV/liftmaster.env" ]] || printf '# Reglages locaux de Pontouns (cle meteo...), un NOM=valeur par ligne.\n' >"$DOSSIER_ENV/liftmaster.env"
 	chmod 600 "$DOSSIER_ENV/liftmaster.env"
 
 	# --- Version active, agent, unités ------------------------------------------
@@ -314,7 +314,7 @@ main() {
 
 	cat <<EOF
 
-✅ LiftMaster $VERSION installé.
+✅ Pontouns $VERSION installé.
 
 📋 Commandes utiles :
   - Statut       : systemctl status liftmaster-backend
