@@ -1,6 +1,6 @@
-# LiftMaster — versions publiées
+# Pontouns — versions publiées
 
-Ce dépôt ne contient aucun code source : il distribue les mises à jour des installations LiftMaster. Tout y est publié par les workflows du dépôt de développement (privé).
+Ce dépôt ne contient aucun code source : il distribue les mises à jour des installations Pontouns. Tout y est publié par les workflows du dépôt de développement (privé).
 
 - **Releases**
   - `v<version>` : le paquet serveur `liftmaster-<version>.tar.gz`, installé par l'agent de chaque Raspberry Pi ;
@@ -17,5 +17,5 @@ Quand une version publiée sur beta a fait ses preuves : **Actions > Promouvoir 
 ## Installer un Raspberry Pi neuf
 
 ```bash
-curl -fsSL https://fabienbounoir.github.io/lift-releases/installer.sh | sudo bash
+curl -fsSL https://fabienbounoir.github.io/pontouns-releases/installer.sh | sudo bash
 ```
