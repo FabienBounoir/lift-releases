@@ -1,25 +1,36 @@
 {
-  "version": "1.3.1",
-  "date": "2026-10-28T22:14:50.951Z",
-  "notes": "chore(coquille): version 1.0.1 pour tester la mise a jour des postes\n\nCo-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>\nClaude-Session: https://claude.ai/code/session_01CQMWKTrcMWskmjFKK1hbeP",
+  "version": "1.3.50",
+  "date": "2026-11-24T14:40:47.590Z",
+  "notes": "fix(admin): durees lisibles, champ pneu, boutons secondaires, tests stables\n\n- src/lib/duree.js : un seul format de duree (« 42 min », « 19 h 23 »,\n  « 11 j 21 h ») dans les cartes, la file, l'historique et les stats,\n  avec son test ; six formateurs locaux supprimes\n- champ 205 / 55 R 16 : largeurs fixes, la dimension se lit d'un bloc\n- --adm-soft : en sombre les boutons secondaires ressortent de la carte\n- premier test E2E a 25 s (compilation a froid), tests shell de l'agent et\n  de l'installeur a 90 s (machine chargee)\n\nCo-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>\nClaude-Session: https://claude.ai/code/session_01CQMWKUccGHPSLuCygNgH8G",
   "nodeMin": 20,
   "urgent": false,
   "serveur": {
-    "url": "https://github.com/FabienBounoir/lift-releases/releases/download/v1.3.1/liftmaster-1.3.1.tar.gz",
-    "sha256": "4be437c7756e621b763fa7fb3052b2affc0ef6961bda32b8b0c6cd022744500f"
+    "url": "https://github.com/FabienBounoir/lift-releases/releases/download/v1.3.50/liftmaster-1.3.50.tar.gz",
+    "sha256": "87ba5df0d8cef8c2b518eecabc97cb266f0c70e1f4954e35b0f85cebdc237646"
   },
   "coquille": {
-    "version": "1.0.1",
-    "notes": "Coquille LiftMaster 1.0.1",
-    "pub_date": "2026-10-28T22:12:51.182Z",
+    "version": "1.0.5",
+    "notes": "Coquille LiftMaster 1.0.5",
+    "pub_date": "2026-11-24T12:04:23.985Z",
     "platforms": {
+      "android": {
+        "url": "https://github.com/FabienBounoir/lift-releases/releases/download/coquille-v1.0.5/liftmaster-coquille_1.0.5_android.apk"
+      },
+      "linux-aarch64": {
+        "url": "https://github.com/FabienBounoir/lift-releases/releases/download/coquille-v1.0.5/liftmaster-coquille_1.0.5_linux-arm64.deb",
+        "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVRNnN0RVo2NDdvUjZMbXJCVmNFOXQ2NWtnK2szNW9XZFlYc25BRElFWXR3d294U3FnYUtLYzl2V1F6RjN2YW5QQ29IZjFGQ2tzS2pEeEE4a1B5NlhVUDJlTVEyS1Y3dGd3PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1NTIxNDU5CWZpbGU6R2VzdGlvbm5haXJlIGRlIHBvbnRzXzEuMC41X2FybTY0LmRlYgl2ZXJzaW9uOjEuMC41CnF4Ti9rY0ZHVGxkbFhmQldRbkczU2lhOE5BY2pIUkhPOUU2OFRWMEdvcE9GMDFzdXpPK1A0cGpsSVBEQ0lhK0VpTHo0bTVzUElieTU4U2thejlyYUN3PT0K"
+      },
       "darwin-aarch64": {
-        "url": "https://github.com/FabienBounoir/lift-releases/releases/download/coquille-v1.0.1/liftmaster-coquille_1.0.1_macos-universal.app.tar.gz",
-        "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVRNnN0RVo2NDdvUitVbWhXNlFkZEptM09SZGYwVFBvM3IxbTBEZGwvcmFnY3lkVjBRK2UwWk9kMHVKODlVUWs3Tk1yU0ZqOHI2SlBYOUM2L3o5ODFrc3I2cG9FODN4UlFBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzMjI1NTI5CWZpbGU6R2VzdGlvbm5haXJlIGRlIHBvbnRzLmFwcC50YXIuZ3oJdmVyc2lvbjoxLjAuMQptV1hvLzc5enZvL3dFamc5ZlhTOGlhYTVWdzdDMEZTWUUrV21lUU1jMTFYSFZhQWwzR2YrV3dzVDAxYkNSV2FjUU0vemd2S3lBVXhYUkloVlJaUlJCdz09Cg=="
+        "url": "https://github.com/FabienBounoir/lift-releases/releases/download/coquille-v1.0.5/liftmaster-coquille_1.0.5_macos-universal.app.tar.gz",
+        "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVRNnN0RVo2NDdvUjVQTU9YcnVFL0tNRXhsTklMMklJUjZFa3ZNb2RDaHlwblZEWEwrYS9nVFdyR2RiNGlJYkxQeFN4RFd0SXJsL1VTcHFWR2gwS0RVYVFiN3k5QXY0dlFrPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1NTIxNDIwCWZpbGU6R2VzdGlvbm5haXJlIGRlIHBvbnRzLmFwcC50YXIuZ3oJdmVyc2lvbjoxLjAuNQpCQ2FvdWR4SWFISjljRFZ2V1JGcmNuNFNZTXRXNWQ2bnpRME8xSGI4T0pVaGZ6NGdlZHlZM3dyZmw3S3I0R3RYYml5MGVSZENwN2xRU0pCVVpBM0tCUT09Cg=="
       },
       "darwin-x86_64": {
-        "url": "https://github.com/FabienBounoir/lift-releases/releases/download/coquille-v1.0.1/liftmaster-coquille_1.0.1_macos-universal.app.tar.gz",
-        "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVRNnN0RVo2NDdvUitVbWhXNlFkZEptM09SZGYwVFBvM3IxbTBEZGwvcmFnY3lkVjBRK2UwWk9kMHVKODlVUWs3Tk1yU0ZqOHI2SlBYOUM2L3o5ODFrc3I2cG9FODN4UlFBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkzMjI1NTI5CWZpbGU6R2VzdGlvbm5haXJlIGRlIHBvbnRzLmFwcC50YXIuZ3oJdmVyc2lvbjoxLjAuMQptV1hvLzc5enZvL3dFamc5ZlhTOGlhYTVWdzdDMEZTWUUrV21lUU1jMTFYSFZhQWwzR2YrV3dzVDAxYkNSV2FjUU0vemd2S3lBVXhYUkloVlJaUlJCdz09Cg=="
+        "url": "https://github.com/FabienBounoir/lift-releases/releases/download/coquille-v1.0.5/liftmaster-coquille_1.0.5_macos-universal.app.tar.gz",
+        "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVRNnN0RVo2NDdvUjVQTU9YcnVFL0tNRXhsTklMMklJUjZFa3ZNb2RDaHlwblZEWEwrYS9nVFdyR2RiNGlJYkxQeFN4RFd0SXJsL1VTcHFWR2gwS0RVYVFiN3k5QXY0dlFrPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1NTIxNDIwCWZpbGU6R2VzdGlvbm5haXJlIGRlIHBvbnRzLmFwcC50YXIuZ3oJdmVyc2lvbjoxLjAuNQpCQ2FvdWR4SWFISjljRFZ2V1JGcmNuNFNZTXRXNWQ2bnpRME8xSGI4T0pVaGZ6NGdlZHlZM3dyZmw3S3I0R3RYYml5MGVSZENwN2xRU0pCVVpBM0tCUT09Cg=="
+      },
+      "windows-x86_64": {
+        "url": "https://github.com/FabienBounoir/lift-releases/releases/download/coquille-v1.0.5/liftmaster-coquille_1.0.5_windows-x64-setup.exe",
+        "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVRNnN0RVo2NDdvUno1czg5OXM4eE8yQ1JCSktyTi9BZ1RGU1JqbHpDekVHTlNzWldHRWhCWlVFQTcvUmtLUXVtNDVqOTZGbXA2L2VBK2E5alZBV3lEY3N6WXdZUkoxMHdnPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1NTIxNTU4CWZpbGU6R2VzdGlvbm5haXJlIGRlIHBvbnRzXzEuMC41X3g2NC1zZXR1cC5leGUJdmVyc2lvbjoxLjAuNQpNb09UQ2trVE16dlRvNlZBVzhQd3dSMVZ1OW1MYXA1cGNJVURjNFhyckRqWjlMWHowYjJDR2lYWXNCcGxObm1sS3A1ZG9CZGMwTTFQRlI4OGFYQWZBZz09Cg=="
       }
     }
   }
