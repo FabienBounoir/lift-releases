@@ -272,7 +272,7 @@ main() {
 		# l'ancien depot. Sans cela le garage repartait avec l'identite neutre.
 		MIGRATION_IDENTITE="$DEST/migrations/001-identite.js"
 		if [[ -f "$ANCIEN/branding-config.json" && ! -f "$DATA_DIR/branding.json" && -f "$MIGRATION_IDENTITE" ]]; then
-			VILLE="$(grep -E '^OPENWEATHER_CITY=' "$ANCIEN/.env" 2>/dev/null | tail -1 | cut -d= -f2- | tr -d "\"'" || true)"
+			VILLE="$(grep -E '^OPENWEATHER_CITY=' "$ANCIEN/.env" 2>/dev/null | tail -1 | cut -d= -f2- | sed -E -e 's/^"(.*)"$/\1/' -e "s/^'(.*)'\$/\\1/" || true)"
 			OPENWEATHER_CITY="${VILLE:-${OPENWEATHER_CITY:-}}" "$NODE_BIN" --input-type=module -e '
 				const [migration, dataDir, codeDir] = process.argv.slice(1);
 				await (await import(migration)).default({ dataDir, codeDir });

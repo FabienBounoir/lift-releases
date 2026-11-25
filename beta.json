@@ -1,12 +1,12 @@
 {
-  "version": "1.3.84",
-  "date": "2026-11-25T18:42:02.120Z",
-  "notes": "LiftMaster 1.3.84 — TV, écran mécano, admin et annonces vocales\n\nTV\n- Nouvelles dispositions Statut, Bandeau et Tableau, à choisir par écran\n  dans Réglages > Clients TV (Classique par défaut)\n- File d'attente lisible, textes trop longs qui défilent, plus de débordement\n- Plus de libération de pont par un toucher ou un clic sur la TV\n\nAnnonces vocales\n- Voix environ 2,5 fois plus rapide (0,6 s au lieu de 1,7 s sur Pi 5)\n- Plus de TV muette quand plusieurs écrans annoncent la même phrase\n- Phrases non entendues depuis 30 jours effacées automatiquement\n\nAdmin\n- Nouveau service : bouton « Ajouter » toujours visible en bas, avec\n  récapitulatif et erreurs ; prix, dimensions pneu et commentaire repliés\n- Choix des dimensions pneu dans une fenêtre dédiée\n- File d'attente groupée par pont attendu, services en couleur,\n  commentaire bien visible, temps d'attente\n- Récents rangés en À encaisser / Encore en atelier / Payés : un véhicule\n  n'est plus « à payer » tant que tous ses services ne sont pas finis\n\nÉcran mécano et téléphone\n- Écran tactile plus lisible, plein écran mémorisé\n- En-têtes et réglages utilisables sur téléphone\n- Fenêtres de choix (véhicule, pneu, détail) en plein écran sur téléphone\n\nInstallation\n- La bascule d’un Pi installé à l’ancienne garde le nom, les logos et la\n  ville du garage\n- Le script d’installation de l’écran TV est fourni avec le serveur",
+  "version": "1.3.85",
+  "date": "2026-11-25T18:49:35.472Z",
+  "notes": "LiftMaster 1.3.85 — TV, écran mécano, admin et annonces vocales\n\nTV\n- Nouvelles dispositions Statut, Bandeau et Tableau, à choisir par écran\n  dans Réglages > Clients TV (Classique par défaut)\n- File d'attente lisible, textes trop longs qui défilent, plus de débordement\n- Plus de libération de pont par un toucher ou un clic sur la TV\n\nAnnonces vocales\n- Voix environ 2,5 fois plus rapide (0,6 s au lieu de 1,7 s sur Pi 5)\n- Plus de TV muette quand plusieurs écrans annoncent la même phrase\n- Phrases non entendues depuis 30 jours effacées automatiquement\n\nAdmin\n- Nouveau service : bouton « Ajouter » toujours visible en bas, avec\n  récapitulatif et erreurs ; prix, dimensions pneu et commentaire repliés\n- Choix des dimensions pneu dans une fenêtre dédiée\n- File d'attente groupée par pont attendu, services en couleur,\n  commentaire bien visible, temps d'attente\n- Récents rangés en À encaisser / Encore en atelier / Payés : un véhicule\n  n'est plus « à payer » tant que tous ses services ne sont pas finis\n\nÉcran mécano et téléphone\n- Écran tactile plus lisible, plein écran mémorisé\n- En-têtes et réglages utilisables sur téléphone\n- Fenêtres de choix (véhicule, pneu, détail) en plein écran sur téléphone\n\nInstallation\n- La bascule d’un Pi installé à l’ancienne garde le nom, les logos et la\n  ville du garage\n- Le script d’installation de l’écran TV est fourni avec le serveur",
   "nodeMin": 20,
   "urgent": false,
   "serveur": {
-    "url": "https://github.com/FabienBounoir/lift-releases/releases/download/v1.3.84/liftmaster-1.3.84.tar.gz",
-    "sha256": "48b3b317b2a249835a980a3d04e51bdb80f7a9572cb51ea17af5c78981e92655"
+    "url": "https://github.com/FabienBounoir/lift-releases/releases/download/v1.3.85/liftmaster-1.3.85.tar.gz",
+    "sha256": "85c54cdae208e59cc0729117c48a1792aba4be3c41719305c4b324a0fc1be81f"
   },
   "coquille": {
     "version": "1.0.5",
