@@ -265,6 +265,21 @@ main() {
 			systemctl stop liftmaster-backend 2>/dev/null || true
 		fi
 
+		# Identite du garage (nom, logos, couleurs) : les anciennes installations la
+		# gardaient dans branding-config.json et static/ de leur depot, que le
+		# paquet n'a pas. La migration 001 la reprend dans DATA_DIR/branding.json,
+		# mais au demarrage elle lit le code du paquet : on la joue ici, sur
+		# l'ancien depot. Sans cela le garage repartait avec l'identite neutre.
+		MIGRATION_IDENTITE="$DEST/migrations/001-identite.js"
+		if [[ -f "$ANCIEN/branding-config.json" && ! -f "$DATA_DIR/branding.json" && -f "$MIGRATION_IDENTITE" ]]; then
+			VILLE="$(grep -E '^OPENWEATHER_CITY=' "$ANCIEN/.env" 2>/dev/null | tail -1 | cut -d= -f2- | tr -d "\"'" || true)"
+			OPENWEATHER_CITY="${VILLE:-${OPENWEATHER_CITY:-}}" "$NODE_BIN" --input-type=module -e '
+				const [migration, dataDir, codeDir] = process.argv.slice(1);
+				await (await import(migration)).default({ dataDir, codeDir });
+			' "file://$MIGRATION_IDENTITE" "$DATA_DIR" "$ANCIEN"
+			echo "✅ Identité du garage reprise de $ANCIEN/branding-config.json"
+		fi
+
 		if [[ -f "$ANCIEN/.env" && ! -f "$DOSSIER_ENV/liftmaster.env" ]]; then
 			# DATA_DIR est fixé par l'unité : un ancien .env qui le redéfinirait
 			# (EnvironmentFile l'emporte sur Environment) renverrait vers l'ancien dossier.
