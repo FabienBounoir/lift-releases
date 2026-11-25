@@ -1,12 +1,12 @@
 {
-  "version": "1.3.50",
-  "date": "2026-11-24T14:40:47.590Z",
-  "notes": "fix(admin): durees lisibles, champ pneu, boutons secondaires, tests stables\n\n- src/lib/duree.js : un seul format de duree (« 42 min », « 19 h 23 »,\n  « 11 j 21 h ») dans les cartes, la file, l'historique et les stats,\n  avec son test ; six formateurs locaux supprimes\n- champ 205 / 55 R 16 : largeurs fixes, la dimension se lit d'un bloc\n- --adm-soft : en sombre les boutons secondaires ressortent de la carte\n- premier test E2E a 25 s (compilation a froid), tests shell de l'agent et\n  de l'installeur a 90 s (machine chargee)\n\nCo-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>\nClaude-Session: https://claude.ai/code/session_01CQMWKUccGHPSLuCygNgH8G",
+  "version": "1.3.82",
+  "date": "2026-11-25T18:28:19.192Z",
+  "notes": "perf(tts): annonces vocales plus rapides, fiables a plusieurs TV, cache purge\n\n- Une phrase demandee par plusieurs TV au meme instant n'est synthetisee\n  qu'une fois : avant, chaque TV lancait son piper sur le meme fichier .part\n  et certaines restaient muettes (10 sur 15 au banc a 3 TV).\n- Piper reste lance (--json-input), voix chargee au demarrage du serveur,\n  relance automatique s'il s'arrete ou bloque 20 s. Nouvelle phrase sur\n  Pi 5 : 1,7-2,1 s -> 0,6-0,8 s ; 3 TV : 4-5 s -> 0,7 s. ~145 Mo de RAM.\n- Phrases non jouees depuis 30 jours effacees par le serveur (demarrage puis\n  chaque jour), date rafraichie a chaque lecture : pas de cron, arrive sur\n  les Pi deja installes avec la mise a jour.\n- Doc docs/maintenance/annonces-vocales.md : fonctionnement, mesures, ajout\n  de Piper sur un Pi installe avant les annonces (l'agent ne l'installe pas).\n\nCo-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>\nClaude-Session: https://claude.ai/code/session_01CQMWKUccGHPSLuCygNgH8G",
   "nodeMin": 20,
   "urgent": false,
   "serveur": {
-    "url": "https://github.com/FabienBounoir/lift-releases/releases/download/v1.3.50/liftmaster-1.3.50.tar.gz",
-    "sha256": "87ba5df0d8cef8c2b518eecabc97cb266f0c70e1f4954e35b0f85cebdc237646"
+    "url": "https://github.com/FabienBounoir/lift-releases/releases/download/v1.3.82/liftmaster-1.3.82.tar.gz",
+    "sha256": "066d9e3a579bfc21890b1e294c710b91e921b560c0d7e4b7e262001bf8768bbc"
   },
   "coquille": {
     "version": "1.0.5",
