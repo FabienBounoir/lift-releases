@@ -1,12 +1,12 @@
 {
-  "version": "1.3.82",
-  "date": "2026-11-25T18:28:19.192Z",
-  "notes": "perf(tts): annonces vocales plus rapides, fiables a plusieurs TV, cache purge\n\n- Une phrase demandee par plusieurs TV au meme instant n'est synthetisee\n  qu'une fois : avant, chaque TV lancait son piper sur le meme fichier .part\n  et certaines restaient muettes (10 sur 15 au banc a 3 TV).\n- Piper reste lance (--json-input), voix chargee au demarrage du serveur,\n  relance automatique s'il s'arrete ou bloque 20 s. Nouvelle phrase sur\n  Pi 5 : 1,7-2,1 s -> 0,6-0,8 s ; 3 TV : 4-5 s -> 0,7 s. ~145 Mo de RAM.\n- Phrases non jouees depuis 30 jours effacees par le serveur (demarrage puis\n  chaque jour), date rafraichie a chaque lecture : pas de cron, arrive sur\n  les Pi deja installes avec la mise a jour.\n- Doc docs/maintenance/annonces-vocales.md : fonctionnement, mesures, ajout\n  de Piper sur un Pi installe avant les annonces (l'agent ne l'installe pas).\n\nCo-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>\nClaude-Session: https://claude.ai/code/session_01CQMWKUccGHPSLuCygNgH8G",
+  "version": "1.3.83",
+  "date": "2026-11-25T18:31:45.559Z",
+  "notes": "LiftMaster 1.3.83 — TV, écran mécano, admin et annonces vocales\n\nTV\n- Nouvelles dispositions Statut, Bandeau et Tableau, à choisir par écran\n  dans Réglages > Clients TV (Classique par défaut)\n- File d'attente lisible, textes trop longs qui défilent, plus de débordement\n- Plus de libération de pont par un toucher ou un clic sur la TV\n\nAnnonces vocales\n- Voix environ 2,5 fois plus rapide (0,6 s au lieu de 1,7 s sur Pi 5)\n- Plus de TV muette quand plusieurs écrans annoncent la même phrase\n- Phrases non entendues depuis 30 jours effacées automatiquement\n\nAdmin\n- Nouveau service : bouton « Ajouter » toujours visible en bas, avec\n  récapitulatif et erreurs ; prix, dimensions pneu et commentaire repliés\n- Choix des dimensions pneu dans une fenêtre dédiée\n- File d'attente groupée par pont attendu, services en couleur,\n  commentaire bien visible, temps d'attente\n- Récents rangés en À encaisser / Encore en atelier / Payés : un véhicule\n  n'est plus « à payer » tant que tous ses services ne sont pas finis\n\nÉcran mécano et téléphone\n- Écran tactile plus lisible, plein écran mémorisé\n- En-têtes et réglages utilisables sur téléphone\n- Fenêtres de choix (véhicule, pneu, détail) en plein écran sur téléphone",
   "nodeMin": 20,
   "urgent": false,
   "serveur": {
-    "url": "https://github.com/FabienBounoir/lift-releases/releases/download/v1.3.82/liftmaster-1.3.82.tar.gz",
-    "sha256": "066d9e3a579bfc21890b1e294c710b91e921b560c0d7e4b7e262001bf8768bbc"
+    "url": "https://github.com/FabienBounoir/lift-releases/releases/download/v1.3.83/liftmaster-1.3.83.tar.gz",
+    "sha256": "9a94aa732b148f78878ddbf43f69aa77caff98a981a441dbfc36fe8442c6c393"
   },
   "coquille": {
     "version": "1.0.5",
