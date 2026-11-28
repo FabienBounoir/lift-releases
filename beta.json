@@ -1,25 +1,33 @@
 {
-  "version": "1.3.132",
-  "date": "2026-11-28T12:15:06.776Z",
-  "notes": "LiftMaster 1.3.132 — écrans plus robustes\n\nÉcrans\n- Un écran allumé avant son serveur (coupure de courant, redémarrage) attend qu'il réponde et repart tout seul, même si d'autres serveurs LiftMaster sont visibles sur le réseau.\n- Un serveur trop ancien (installé avant les versions publiées) est signalé clairement au lieu de « serveur injoignable ».\n- Coquille 1.3.131 distribuée aux postes Windows et aux TV Raspberry Pi.\n\nRéseau\n- Chaque Pi s'annonce sous un nom unique : deux Pi sur le même réseau sont tous les deux trouvés.\n\nAdmin\n- Le menu « ⋯ » d'une carte en bas de liste s'ouvre vers le haut au lieu d'être coupé.",
+  "version": "1.3.133",
+  "date": "2026-11-28T12:46:45.093Z",
+  "notes": "LiftMaster 1.3.133 — coquille 1.3.132\n\nÉcrans\n- Coquille 1.3.132 distribuée aux postes Windows, macOS et aux TV Raspberry Pi.\n- Après une mise à jour de la coquille sur le Pi, l'appli ne se lance plus en double.",
   "nodeMin": 20,
   "urgent": false,
   "serveur": {
-    "url": "https://github.com/FabienBounoir/lift-releases/releases/download/v1.3.132/liftmaster-1.3.132.tar.gz",
-    "sha256": "28b2feb2b7e08872f45043340eae2b8cd17090814b5d632961dc8163bd2d124e"
+    "url": "https://github.com/FabienBounoir/lift-releases/releases/download/v1.3.133/liftmaster-1.3.133.tar.gz",
+    "sha256": "1d395800f43d02a05b087703fa51b4c14f9dea8fb0a86ed4071278d6147f43b8"
   },
   "coquille": {
-    "version": "1.3.131",
-    "notes": "Coquille LiftMaster 1.3.131",
-    "pub_date": "2026-11-28T12:13:14.960Z",
+    "version": "1.3.132",
+    "notes": "Coquille LiftMaster 1.3.132",
+    "pub_date": "2026-11-28T12:45:18.054Z",
     "platforms": {
       "linux-aarch64": {
-        "url": "https://github.com/FabienBounoir/lift-releases/releases/download/coquille-v1.3.131/liftmaster-coquille_1.3.131_linux-arm64.deb",
-        "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVRNnN0RVo2NDdvUjlob01EVld4bFRhWHNkOGdNczdtUU5sZzNTK0xUWHY3Q24xa1dQRG1vUkttYXBrRzZEZ01qZkxpdmZUT3A5OHg1YktRVWh1NDY1emxrNmlrVnhHUGdVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1ODY3NDUzCWZpbGU6R2VzdGlvbm5haXJlIGRlIHBvbnRzXzEuMy4xMzFfYXJtNjQuZGViCXZlcnNpb246MS4zLjEzMQpEZFdPZXJPU2FvMUd3TXMra29RM2dsQWJPcHpaRXBDeDNidVNzdDY3Z3o1cFBycm53dm5UZkNCaEZPem5FdEphb3pSc1dSQVRPdEdwYTRXb2paVDhDUT09Cg=="
+        "url": "https://github.com/FabienBounoir/lift-releases/releases/download/coquille-v1.3.132/liftmaster-coquille_1.3.132_linux-arm64.deb",
+        "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVRNnN0RVo2NDdvUjhCMWZ1dmNadm1YdVJxZzIwMm4vaFA0eGVpYnQ1Q204bkx2NjA1Rkx6a24zSDk3Sk9MTklwRTFUeFRpQTVVVjA5TnN3VllzTFdWSEpHQWw5aDNEOHd3PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1ODY5MTcwCWZpbGU6R2VzdGlvbm5haXJlIGRlIHBvbnRzXzEuMy4xMzJfYXJtNjQuZGViCXZlcnNpb246MS4zLjEzMgpOSWdTd0tvbkRjSEtyTUUxMkk0VUpod0xRMFJacHZmc1BFbHVVL0UzUVVVT01mV1J5enZISHh0K2huSVM4V3ZVOGxEMEZHcDlVRmFIdmxBMVl4VnpDZz09Cg=="
+      },
+      "darwin-aarch64": {
+        "url": "https://github.com/FabienBounoir/lift-releases/releases/download/coquille-v1.3.132/liftmaster-coquille_1.3.132_macos-universal.app.tar.gz",
+        "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVRNnN0RVo2NDdvUjAzMlYwRWlPSm1KSHdUMlJGaE9XWkE0WHgrbjYyRjVYdERQTGc5d0tUaWl3UjlWejFMUTNmT3FWNCt1Um5XdzZkcmpvTWs5eWtqbUdaTE9aN0VWZHcwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1ODY5MDIyCWZpbGU6R2VzdGlvbm5haXJlIGRlIHBvbnRzLmFwcC50YXIuZ3oJdmVyc2lvbjoxLjMuMTMyCjJWQnBVaG43NjZ4dFBTRFBrRGZ0TnhSeDgvM09TOTVmVmozclA1cmtnUGRUQW5iSDN0S0FwUEpnTEJwckhBRUZSODZSS014VFU1Y25IY0lwQ1lRSURRPT0K"
+      },
+      "darwin-x86_64": {
+        "url": "https://github.com/FabienBounoir/lift-releases/releases/download/coquille-v1.3.132/liftmaster-coquille_1.3.132_macos-universal.app.tar.gz",
+        "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVRNnN0RVo2NDdvUjAzMlYwRWlPSm1KSHdUMlJGaE9XWkE0WHgrbjYyRjVYdERQTGc5d0tUaWl3UjlWejFMUTNmT3FWNCt1Um5XdzZkcmpvTWs5eWtqbUdaTE9aN0VWZHcwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1ODY5MDIyCWZpbGU6R2VzdGlvbm5haXJlIGRlIHBvbnRzLmFwcC50YXIuZ3oJdmVyc2lvbjoxLjMuMTMyCjJWQnBVaG43NjZ4dFBTRFBrRGZ0TnhSeDgvM09TOTVmVmozclA1cmtnUGRUQW5iSDN0S0FwUEpnTEJwckhBRUZSODZSS014VFU1Y25IY0lwQ1lRSURRPT0K"
       },
       "windows-x86_64": {
-        "url": "https://github.com/FabienBounoir/lift-releases/releases/download/coquille-v1.3.131/liftmaster-coquille_1.3.131_windows-x64-setup.exe",
-        "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVRNnN0RVo2NDdvUi9nN1VsTVUrR1VGTmZqOHc5enZBL2JTbDVBSC8yZWF3bkc4WWV0SU5GaC9LRlU1dVNXaUprOTU3Zjd6V2wwN3dtR0J1c2ZGKzM2bDUwYitRVDFaWndNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1ODY3OTc0CWZpbGU6R2VzdGlvbm5haXJlIGRlIHBvbnRzXzEuMy4xMzFfeDY0LXNldHVwLmV4ZQl2ZXJzaW9uOjEuMy4xMzEKL2Y0UWdoUzAzOGE0TWViVDE0UDRwYnFVclVBajZ5cllkaXU2VXpSSkY2Q2hvU09kWWZuOGRRdWd1RExIS3JTcGplRGY3VVR2Tkp4aDFmQkxlTW1QQ1E9PQo="
+        "url": "https://github.com/FabienBounoir/lift-releases/releases/download/coquille-v1.3.132/liftmaster-coquille_1.3.132_windows-x64-setup.exe",
+        "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVRNnN0RVo2NDdvUjRTek9vNVg5NDVKZ2N5UzRPcGFMYkRYbG1nWEU1Y1Jvc1FSbGhaQUlWbUZIYk9CR0pSSi9DY3J3Mzd4MHRaR20vbERXcnN6OXl2cnZWVUxOZ2hXTWc0PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk1ODY5NDI3CWZpbGU6R2VzdGlvbm5haXJlIGRlIHBvbnRzXzEuMy4xMzJfeDY0LXNldHVwLmV4ZQl2ZXJzaW9uOjEuMy4xMzIKTWpaS0RDZmhIUDhOcGVSejkyV2VrR1pqMWlhQzh6WitqdGFMSGtwWU1icXBaTWNBRGl0Tko3ekFnWE45Q1B0QUhleVNvN3ZFRTBkbG5CVXFnUk4yQ1E9PQo="
       }
     }
   }
